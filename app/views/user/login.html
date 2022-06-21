@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="public/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一种怪异的方式</title>
+  <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/vue-router@4.0.3/dist/vue-router.global.js"></script>
+  <link src="/css/reset.css"></script>
+  <link rel="stylesheet" href="https://unpkg.com/element-plus@1.0.2-beta.30/lib/theme-chalk/index.css">
+  <script src="https://unpkg.com/element-plus@1.0.2-beta.30/lib/index.full.js"></script>
+  <!--axios-->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <style>
+    #app {
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    #nav {
+      padding: 30px;
+    }
+
+    #nav a {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    #nav a.router-link-exact-active {
+      color: #42b983;
+    }
+
+    .login-wrapper {
+      background-image: url("https://aaeasy-file.newbanker.cn/pic/NB%E9%85%8D%E7%BD%AE%E6%98%93%E5%A4%9A%E7%A7%9F%E6%88%B7%E7%94%A8/%E9%A6%96%E9%A1%B5%E5%B0%81%E9%9D%A2/%E5%AE%9A%E7%A8%BF.png")
+    }
+
+    body{
+      padding: 0;
+      margin: 0;
+    };
+  </style>
+  <style lang="scss" scoped>
+    .login-wrapper {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    .login-wrapper .login-r {
+      width: 400px;
+      position: absolute;
+      top: 23%;
+      right: 5%;
+      background-color: #fff;
+      border-radius: 8px;
+      padding-top: 20px;
+    }
+
+    .login-wrapper .item-bom-form {
+      margin-bottom: 30px;
+    }
+
+    .login-wrapper .logo {
+      width: 140px;
+      float: right;
+      margin-right: 60px;
+      margin-top: 40px;
+    }
+
+    .login-wrapper .login-box-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+
+      padding: 0 15%;
+      box-sizing: border-box;
+
+    }
+
+    .login-wrapper .login-box {
+      width: 100%;
+      margin-top: calc(50vh - 80px);
+      transform: translateY(-50%);
+
+    }
+
+    .login-wrapper .title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .login-wrapper .form {
+      margin-top: 45px;
+    }
+    .flex-row-between-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+    <div class="login-wrapper">
+      <div class="login-r">
+        <div class="login-container flex-row-center login-box-wrapper">
+          <el-form
+            ref="loginForm"
+            :model="loginForm"
+            :rules="loginRules"
+            class="login-form"
+            autocomplete="on"
+            label-position="left"
+          >
+            <!-- <div class="title-container">
+              <img class="logo-img" :src="homeLogo" alt="" />
+            </div>
+   -->
+            <el-form-item prop="credential" class="item-bom-form">
+              <el-input
+                v-model="loginForm.credential"
+                type="number"
+                placeholder="请输入手机号"
+                autocomplete="on"
+                :maxlength="11"
+              />
+            </el-form-item>
+  
+            <el-form-item prop="password" class="item-bom-form">
+              <el-input
+                :key="passwordType"
+                ref="password"
+                v-model="loginForm.password"
+                :type="passwordType"
+                name="password"
+                autocomplete="on"
+                placeholder="请输入密码"
+                @keyup.enter.native="handleLogin"
+              />
+              <span class="show-pwd" @click="showPwd">
+              </span>
+            </el-form-item>
+  
+            <div  class="flex-row-between-start">
+              <el-form-item prop="code" class="item-bom-form">
+                <el-input
+                  v-model="loginForm.code"
+                  type="text"
+                  name="code"
+                  auto-complete="new-password"
+                  placeholder="请输入手机验证码"
+                  @keyup.enter.native="handleLogin"
+                />
+              </el-form-item>
+              <el-button v-if="clickAble" class="fetch-code" @click="getCode">
+                获取验证码
+              </el-button>
+              <el-button v-else style="width: 92px" disabled class="fetch-code">
+                <span style="color: #000">{{ timeNum }} s</span>
+              </el-button>
+            </div> 
+  
+            <el-button
+           
+              type="primary"
+              style="width: 100%; margin-bottom: 30px"
+         
+            >
+              登录
+            </el-button>
+          </el-form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script type="module" src="/src/main.js?v=9"></script>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+{
+  "storyBaseUrl":"https://aaeasy-file.newbanker.cn",
+  "routePrefix": "/storyApi",
+  "proxyPrefix": "/storyLine",
+  "dbname": "storyLinedb"
+}

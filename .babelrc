@@ -1,0 +1,23 @@
+{
+  "presets": [
+    "es2015",
+    ["env", {"modules": false}],
+    "stage-2"
+  ],
+  "plugins": [
+    "transform-runtime",
+    ["module-resolver", {
+      "alias": {
+        "@": "./app"
+      }
+    }]
+  ],
+  "comments": false,
+  "compact": false,
+  "env": {
+    "test": {
+      "presets": ["env", "stage-2"],
+      "plugins": ["istanbul"]
+    }
+  }
+}

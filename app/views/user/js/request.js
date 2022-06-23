@@ -1,6 +1,6 @@
 const Message = ELEMENT.Message;
 const service =  axios.create({
-    baseURL: `/fetchPrefix/aap/api/v1`,
+    baseURL: `/aap/api/v1`,
     timeout: 600000,
 });
 

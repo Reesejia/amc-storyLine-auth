@@ -108,7 +108,7 @@ new Vue({
                         const map = {
                             "fundCompass": "/pic/homepage/罗盘更新0602/start.html#id=hux8kd&p=目录页&g=1"
                         }
-                        window.location.href = `/storyLine/amc/project/static/files${map["fundCompass"]}`
+                        window.location.href = `/amc-storyline-auth/storyLine/amc/project/static/files${map["fundCompass"]}`
                     }
                     this.loading = false;
                 } else {

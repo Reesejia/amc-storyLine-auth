@@ -29,7 +29,7 @@ env.addFilter('tojson', function(obj) {
 })
 
 
-app.use(`${fetchPrefix}`, proxy(fetchUrl))
+// app.use(`${fetchPrefix}`, proxy(fetchUrl))
 app.use(`${proxyPrefix}`, checkLogin, proxy(storyBaseUrl))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use("/amc-storyline-auth",express.static(resolve('../node_modules')))

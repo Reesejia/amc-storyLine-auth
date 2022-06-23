@@ -39,6 +39,7 @@ app.use(`${proxyPrefix}`, checkLogin, proxy(storyBaseUrl))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use("/amc-storyline-auth",express.static(resolve('../node_modules')))
 app.use("/amc-storyline-auth",express.static(resolve('./public')))
+app.use(express.static(resolve('./public')))
 
 app.use(
   session({

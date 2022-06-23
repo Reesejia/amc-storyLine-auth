@@ -9,11 +9,8 @@ const session = require('express-session')
 // const sqlite = require('better-sqlite3')
 const nunjucks = require('nunjucks')
 // const SqliteStore = require('better-sqlite3-session-store')(session)
-
 // const db = new sqlite("sessions.db");
 const {storyBaseUrl, routePrefix, proxyPrefix, fetchPrefix, fetchUrl} = require('config')
-
-
 
 const resolve = dir => path.resolve(__dirname, dir)
 app.set("view engine", "html")
@@ -34,9 +31,6 @@ env.addFilter('tojson', function(obj) {
 
 app.use(`${fetchPrefix}`, proxy(fetchUrl))
 app.use(`${proxyPrefix}`, checkLogin, proxy(storyBaseUrl))
-
-
-// app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use("/amc-storyline-auth",express.static(resolve('../node_modules')))
 app.use("/amc-storyline-auth",express.static(resolve('./public')))

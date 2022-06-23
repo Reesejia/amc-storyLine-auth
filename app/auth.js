@@ -1,8 +1,3 @@
-const {routePrefix} = require('config')
-exports.checkNotLogin = (req, res, next) =>{
-    
-};
-
 exports.checkLogin = function(req, res,next){
     console.log('checkLogin')
     console.log(' req.sessionxxx', req.headers.cookie)

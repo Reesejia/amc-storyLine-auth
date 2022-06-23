@@ -42,8 +42,6 @@ const isPhone = (phone) => {
 };
 
 
-
-
 /**
  * 发送手机验证码
  */

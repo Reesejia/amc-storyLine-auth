@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "NODE_ENV=production nodemon --watch app --watch config",
     "dev": "NODE_ENV=development nodemon --watch app --watch config"
   },
   "keywords": [],

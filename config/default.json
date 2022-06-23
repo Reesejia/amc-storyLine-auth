@@ -4,5 +4,5 @@
   "routePrefix": "/storyApi",
   "dbname": "storyLinedb",
   "fetchUrl": "https://newbanker.aaeasy.cn",
-  "fetchPrefix": ""
+  "fetchPrefix": "/fetchPrefix"
 }

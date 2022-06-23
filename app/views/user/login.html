@@ -187,16 +187,29 @@
 <script src="/amc-storyline-auth/js/elementui.js"></script>
 <script src="/amc-storyline-auth/js/axios.min.js"></script> -->
 
-
+<script>
+  window.process = {env: {NODE_ENV: 'development'}}
+  const isProd = process.env.NODE_ENV === 'production'
+  let fetchPrefix= '';
+  let serverBase = ''
+  if(isProd){
+    fetchPrefix = ''
+    serverBase = '/amc-storyline-auth'
+  }else {
+    fetchPrefix="/fetchPrefix"
+    serverBase = ''
+    // fetchBase = amc-storyline-auth
+  };
+ 
+</script>
 <script src="https://unpkg.com/vue@2.6.14/dist/vue.min.js"></script>
 <script src="https://unpkg.com/element-ui@2.15.9/lib/index.js"></script>
 <script src="https://unpkg.com/axios@0.27.2/dist/axios.min.js" defer></script>
 
+
 <script src="/amc-storyline-auth/js/request.js" defer></script>
 <script src="/amc-storyline-auth/js/login-utils.js"></script>
 <script src="/amc-storyline-auth/js/md5.js" defer></script>
-<script>
-  window.process = {env: {NODE_ENV: 'development'}}
-</script>
+
 <script src="/amc-storyline-auth/js/index.js"></script>
 </html>

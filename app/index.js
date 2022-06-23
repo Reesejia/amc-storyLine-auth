@@ -12,6 +12,8 @@ const nunjucks = require('nunjucks')
 // const db = new sqlite("sessions.db");
 const {storyBaseUrl, routePrefix, proxyPrefix, fetchPrefix, fetchUrl} = require('config')
 
+global.isProd = process.env.NODE_ENV === 'production'
+
 const resolve = dir => path.resolve(__dirname, dir)
 app.set("view engine", "html")
 app.set('views',path.resolve('./views'));
@@ -29,13 +31,14 @@ env.addFilter('tojson', function(obj) {
 })
 
 
-// app.use(`${fetchPrefix}`, proxy(fetchUrl))
+if(!isProd){
+  app.use(`${fetchPrefix}`, proxy(fetchUrl))
+}
+
 app.use(`${proxyPrefix}`, checkLogin, proxy(storyBaseUrl))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use("/amc-storyline-auth",express.static(resolve('../node_modules')))
 app.use("/amc-storyline-auth",express.static(resolve('./public')))
-app.use(express.static(resolve('./public')))
-app.use("/amc-storyline-auth",express.static(resolve('./views/user')))
 
 app.use(
   session({

@@ -36,7 +36,8 @@
     }
 
     .login-wrapper {
-      background-image: url("https://aaeasy-file.newbanker.cn/pic/NB%E9%85%8D%E7%BD%AE%E6%98%93%E5%A4%9A%E7%A7%9F%E6%88%B7%E7%94%A8/%E9%A6%96%E9%A1%B5%E5%B0%81%E9%9D%A2/%E5%AE%9A%E7%A8%BF.png")
+      background-image: url("/amc-storyline-auth/bgNew.png")
+        /* background-image: url("https://aaeasy-file.newbanker.cn/pic/NB%E9%85%8D%E7%BD%AE%E6%98%93%E5%A4%9A%E7%A7%9F%E6%88%B7%E7%94%A8/%E9%A6%96%E9%A1%B5%E5%B0%81%E9%9D%A2/%E5%AE%9A%E7%A8%BF.png") */
     }
 
     body {
@@ -110,10 +111,11 @@
       margin-top: 40px;
 
     }
+
     .login-wrapper .logo-img {
-    height: 60px;
-    margin-bottom: 20px;
-  }
+      height: 60px;
+      margin-bottom: 20px;
+    }
 
     .login-wrapper .title-container .title {
       font-size: 26px;
@@ -144,8 +146,7 @@
               <img class="logo-img" :src="homeLogo" alt="" />
             </div>
             <el-form-item prop="credential" class="item-bom-form">
-              <el-input v-model="loginForm.credential" type="number" placeholder="请输入手机号" autocomplete="on"
-                :maxlength="11" />
+              <el-input v-model="loginForm.credential" type="number" placeholder="请输入手机号" autocomplete="on" :max="11" />
             </el-form-item>
 
             <el-form-item prop="password" class="item-bom-form">
@@ -160,21 +161,17 @@
                 <el-input v-model="loginForm.code" type="number" name="code" auto-complete="new-password"
                   placeholder="请输入手机验证码" @keyup.enter.native="handleLogin" />
               </el-form-item>
-              <el-button v-if="clickAble" style="margin-left: 10px"   class="fetch-code" @click="getCode">
+              <el-button v-if="clickAble" style="margin-left: 10px" class="fetch-code" @click="getCode">
                 获取验证码
               </el-button>
               <el-input v-else style="width: 92px" disabled :value="timeNum + ' s'" class="fetch-code">
               </el-input>
             </div>
 
-            <el-button
-            :loading="loading"
-            type="primary"
-            style="width: 100%; min-width: 300px; margin-bottom: 30px"
-            @click.native.prevent="handleLogin"
-          >
-            登录
-          </el-button>
+            <el-button :loading="loading" type="primary" style="width: 100%; min-width: 300px; margin-bottom: 30px"
+              @click.native.prevent="handleLogin">
+              登录
+            </el-button>
           </el-form>
         </div>
       </div>
@@ -188,19 +185,19 @@
 <script src="/amc-storyline-auth/js/axios.min.js"></script> -->
 
 <script>
-  window.process = {env: {NODE_ENV: 'production'}}
+  window.process = { env: { NODE_ENV: 'production' } }
   const isProd = process.env.NODE_ENV === 'production'
-  let fetchPrefix= '';
+  let fetchPrefix = '';
   let serverBase = ''
-  if(isProd){
+  if (isProd) {
     fetchPrefix = ''
     serverBase = '/amc-storyline-auth'
-  }else {
-    fetchPrefix="/fetchPrefix"
+  } else {
+    fetchPrefix = "/fetchPrefix"
     serverBase = ''
     // fetchBase = amc-storyline-auth
   };
- 
+
 </script>
 <script src="https://unpkg.com/vue@2.6.14/dist/vue.min.js"></script>
 <script src="https://unpkg.com/element-ui@2.15.9/lib/index.js"></script>
@@ -212,4 +209,5 @@
 <script src="/amc-storyline-auth/js/md5.js" defer></script>
 
 <script src="/amc-storyline-auth/js/index.js"></script>
+
 </html>

@@ -109,7 +109,10 @@
       position: relative;
       text-align: center;
       margin-top: 40px;
-
+      color: #409EFF;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 12px;
     }
 
     .login-wrapper .logo-img {
@@ -143,7 +146,7 @@
           <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on"
             label-position="left">
             <div class="title-container">
-              <img class="logo-img" :src="homeLogo" alt="" />
+              牛投邦销售现场演示系统
             </div>
             <el-form-item prop="credential" class="item-bom-form">
               <el-input v-model="loginForm.credential" type="number" placeholder="请输入手机号" autocomplete="on" :max="11" />

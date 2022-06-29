@@ -46,7 +46,7 @@ app.use(
     resave: true,
     secret: "droden", 
     cookie: {
-      maxAge: 2 * 60 * 60 * 1000,
+      maxAge: 24 * 60 * 60 * 1000,
     },
     saveUninitialized: true, // 保存未初始化的session,不管客户端用不用,都初始化个session让你用
     // store:new SqliteStore({

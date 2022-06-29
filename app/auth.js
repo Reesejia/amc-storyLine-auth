@@ -3,6 +3,10 @@ exports.checkLogin = function(req, res,next){
         next()
     }else {
         // req.flash('error','请先登陆');
-        res.redirect('/')
+        if(isProd){
+            res.redirect('/amc-storyline-auth')
+        }else {
+            res.redirect('/')
+        };
     }
 }

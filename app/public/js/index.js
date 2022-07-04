@@ -100,6 +100,7 @@ new Vue({
                     });
                     if (ret.statusCode === 0 && ret.data) {
                         console.log('ret.data', ret.data)
+                        window.sessionStorage.setItem('storyInfo', JSON.stringify(ret.data))
                         this.$message({
                             type: "success",
                             message: "登录成功",

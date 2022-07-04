@@ -12,10 +12,10 @@ console.log('customFunc');
             waterMarkY: 40,
             waterMarkRows: 100,
             waterMarkCols: 200,
-            waterMarkXSpace: 0,
-            waterMarkYSpace: 0,
+            waterMarkXSpace: 140,
+            waterMarkYSpace: 80,
             waterMarkColor: 'gray',
-            waterMarkAlpha: 0.4,
+            waterMarkAlpha: 0.3,
             waterMarkFontSize: '25px',
             waterMarkFont: '微软雅黑',
             waterMarkWidth: 150,
@@ -85,8 +85,10 @@ console.log('customFunc');
     }
 
     setTimeout(() => {
+        const storyInfo = JSON.parse(window.sessionStorage.getItem('storyInfo')) || {}
+        console.log('storyInfo', storyInfo)
         waterMark({
-            waterMarkContent: 'newbanker',
+            waterMarkContent: storyInfo.name || 'newbanker',
             waterMarkId: 'outerContainer'//需要做水印的元素的id
         });
     }, 200);

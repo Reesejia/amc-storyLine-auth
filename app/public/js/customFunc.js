@@ -86,9 +86,11 @@ console.log('customFunc');
 
     setTimeout(() => {
         const storyInfo = JSON.parse(window.sessionStorage.getItem('storyInfo')) || {}
-        console.log('storyInfo', storyInfo)
-        waterMark({
-            waterMarkContent: storyInfo.name || 'newbanker',
-            waterMarkId: 'outerContainer'//需要做水印的元素的id
-        });
+        const arr = ['13911762084','18612978153', '13811810647']
+        if(!arr.includes(storyInfo.mobile)){
+            waterMark({
+                waterMarkContent: storyInfo.name || 'newbanker',
+                waterMarkId: 'outerContainer'//需要做水印的元素的id
+            });
+        }
     }, 200);

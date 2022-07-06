@@ -14,7 +14,7 @@ router.post(`/login2`, async (req, res, next) => {
     console.log(2222, 'login')
     req.session.user = "test"
     const map = {
-        "fundCompass": "/pic/homepage/罗盘更新0602/start.html#id=hux8kd&p=目录页&g=1"
+        "fundCompass": "/pic/homepage/compass0705/start_c_1.html"
     }
     res.redirect(`${proxyPrefix}${map["fundCompass"]}`)
 

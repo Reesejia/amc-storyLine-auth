@@ -107,9 +107,9 @@ new Vue({
                         });
                         //   await redirectToStory(form)
                         const map = {
-                            "fundCompass": "/pic/homepage/罗盘更新0602/start.html#id=hux8kd&p=目录页&c=1"
+                            "fundCompass": "/pic/homepage/compass0705/start_c_1.html"
                         }
-                        window.location.href = `${serverBase}/storyLine/amc/project/static/files${map["fundCompass"]}`
+                        window.location.href = `${serverBase}/business/amc/project/static/files${map["fundCompass"]}`
                     }
                     this.loading = false;
                 } else {

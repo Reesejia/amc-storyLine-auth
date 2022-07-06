@@ -1,5 +1,5 @@
 {
-  "proxyPrefix": "/storyLine/amc/project/static/files",
+  "proxyPrefix": "/business/amc/project/static/files",
   "storyBaseUrl":"https://aaeasy-file.newbanker.cn",
   "routePrefix": "/storyApi",
   "dbname": "storyLinedb",

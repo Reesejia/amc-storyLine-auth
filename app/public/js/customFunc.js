@@ -86,7 +86,7 @@ console.log('customFunc');
 
     setTimeout(() => {
         const storyInfo = JSON.parse(window.sessionStorage.getItem('storyInfo')) || {}
-        const arr = ['13911762084','18612978153', '13811810647']
+        const arr = ['13911762084','18612978153', '13811810647', '18501255019']
         if(!arr.includes(storyInfo.mobile)){
             waterMark({
                 waterMarkContent: storyInfo.name || 'newbanker',

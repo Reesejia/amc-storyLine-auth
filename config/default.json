@@ -4,5 +4,7 @@
   "routePrefix": "/storyApi",
   "dbname": "storyLinedb",
   "fetchUrl": "https://newbanker.aaeasy.cn",
-  "fetchPrefix": "/fetchPrefix"
+  "fetchPrefix": "/fetchPrefix",
+  "baseApi": "/wtapi",
+  "baseApiProxy": "http://localhost:7001"
 }

@@ -1,6 +1,8 @@
 const Message = ELEMENT.Message;
+
+const baseApi = '/wtapi'
 const service =  axios.create({
-    baseURL: `${fetchPrefix}/aap/api/v1`,
+    baseURL: `${baseApi}/aap/api/v1`,
     timeout: 600000,
 });
 

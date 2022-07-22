@@ -10,7 +10,7 @@ const session = require('express-session')
 const nunjucks = require('nunjucks')
 // const SqliteStore = require('better-sqlite3-session-store')(session)
 // const db = new sqlite("sessions.db");
-const {storyBaseUrl, routePrefix, proxyPrefix, fetchPrefix, fetchUrl} = require('config')
+const {storyBaseUrl, routePrefix, proxyPrefix, fetchPrefix, fetchUrl, baseApi, baseApiProxy} = require('config')
 
 global.isProd = process.env.NODE_ENV === 'production'
 
@@ -33,6 +33,7 @@ env.addFilter('tojson', function(obj) {
 
 if(!isProd){
   app.use(`${fetchPrefix}`, proxy(fetchUrl))
+  app.use(baseApi, proxy(baseApiProxy))
 }
 
 app.use(`${proxyPrefix}`, checkLogin, proxy(storyBaseUrl))
